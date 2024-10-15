@@ -281,3 +281,27 @@ button:active {
     right: 8px;
     animation: cursor 0.6 infinite, tying 0s steps(14) infinite;
 }
+
+@keyframes cursor {
+    to{
+        border-left: 2px solid var(--main-color);
+    }
+}
+
+@keyframes words {
+    0%, 20% {
+        content: 'Software Developer';
+    }
+    0%, 20% {
+        content: 'Mobile App Developer';
+    }
+    0%, 20% {
+        content: 'DevOps';
+    }
+    0%, 20% {
+        content: 'Project Manager';
+    }
+    0%, 20% {
+        content: 'IT Consultant';
+    }
+}

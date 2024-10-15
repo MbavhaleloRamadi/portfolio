@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --bg-color:#E6EDf5;
+    --second-bg-color:#E6EDf5;
+    --text-color:#000000;
+    --main-color:#05C3DD;
+}
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+body {
+    background: var(--bg-color);
+    overflow-x: hidden;
+}
+html::-webkit-scrollbar {
+    width: 0.8rem;
+}
+html::-webkit-scrollbar-track {
+    background: var(--bg-color);
+}
+html::-webkit-scrollbar-thumb {
+    background: var(--bg-color);
+}
+
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 3rem 9%;
+    background: var(--second-bg-color);
+    filter: drop-shadow(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+.logo {
+    font-size: 3rem;
+    color: var(--main-color);
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+.logo:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px var(--main-color);
+}
+.navbar a {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+.navbar a:hover,
+.navbar a.active {
+    color: var(--main-color);
+    border-bottom: 3px solid var(--main-color);
+}
+#menu-icon {
+    font-size: 3.6rem;
+    color: var(--main-color);
+    display: none;
+}
+
+@media (max-width:995px) {
+    #menu-icon{
+        display: block;
+    }
+    .navbar{
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 40%;
+        border-left: 3px solid var(--main-color);
+        border-bottom: 3px solid var(--main-color);
+        border-bottom-left-radius: 2rem;
+        padding: 1rem 3%;
+        background-color: var(--second-bg-color);
+        border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+        display: none;
+    }
+    .navbar.active{
+        display: block;
+    }
+    .navbar a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+    .navbar a:hover,
+    .navbar a.active {
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border-bottom: 0.5rem;
+    }
+}
+
+section {
+    min-height: 100vh;
+    padding: 5rem 9% 5rem;
+}
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    background-color: var(--bg-color);
+}
+.home-img img {
+    position: relative;
+    width: 32vw;
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--main-color),
+                0 0 15px var(--main-color), 
+                0 0 50px var(--main-color);
+    cursor: pointer;
+}
+.home-img img:hover {
+    box-shadow: 0 0 15px var(--main-color),
+                0 0 25px var(--main-color), 
+                0 0 70px var(--main-color);
+    transform: scale(1.01);
+}
+
+.home .home-content h1 {
+    font-size: 6rem;
+    font-weight: 800;
+    line-height: 1.3;
+}
+span {
+    color: var(--main-color);
+}
+.home-content h3 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+.home-content p {
+    font-size: 1.7em;
+    font-weight: 400;
+}
+
+.social-icon a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background: transparent;
+    border: 0.2rem solid var(--main-color);
+    font-size: 2rem;
+    border-radius: 50%;
+    color: var(--main-color);
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.3s ease;
+}
+.social-icon a:hover {
+    color: black;
+    transform: scale(1.3)translateY(-5px);
+    box-shadow: 0 0 25px var(--main-color);
+    background: var(--main-color);
+}
+
+.home-button {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.button {
+    all: unset;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 0.6em 2em;
+    border: medium solid var(--main-color);
+    border-radius: 0.25em;
+    color: var(--text-color);
+    font-size: 1.5em;
+    font-weight: 600;
+    cursor: pointer;
+    overflow: hidden;
+    transition: border 300ms, color 300ms;
+    user-select: none;
+}
+
+.button p {
+    z-index: 1;
+}
+.button:hover {
+    color: black;
+    box-shadow: 0 0 25px var(--main-color);
+}
+button:active {
+    border-color: var(--main-color);
+}
+.button::after, .button::before {
+    content: '';
+    position: absolute;
+    width: 12em;
+    aspect-ratio: 1;
+    background: var(--main-color);
+    opacity: 50%;
+    border-radius: 50%;
+    transition: transform 500ms, background 300ms;
+}
+.button::before {
+    left: 0;
+    transform: translateX(-10em);
+}
+.button::after {
+    right: 0;
+    transform: translateX(10em);
+}
+.button:hover::before {
+    transform: translateX(-1em);
+}
+.button:hover::after {
+    transform: translateX(-1em);
+}
+.button:active::before,
+.button:active::after {
+    background: transparent ;
+}
+
+.button2::after, .button2::before {
+    content: '';
+    position: absolute;
+    width: 10em;
+    aspect-ratio: 1;
+    background: var(--main-color);
+    opacity: 50%;
+    border-radius: 50%;
+    transition: transform 500ms, background 300ms;
+}
+.button2::before {
+    left: 0;
+    transform: translateX(-12em);
+}
+.button2::after {
+    right: 0;
+    transform: translateX(12em);
+}
+
+.typing-text {
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+}
+.typing-text span {
+    position: relative;
+}
+.typing-text span::before {
+    content: Software Developer;
+    color: var(--main-color);
+    animation: words 20s infinite;
+}
+.typing-text span::after {
+    content: '';
+    position: absolute;
+    background-color: var(--bg-color);
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid var(--bg-color);
+    right: 8px;
+    animation: cursor 0.6 infinite, tying 0s steps(14) infinite;
+}

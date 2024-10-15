@@ -267,7 +267,7 @@ button:active {
     position: relative;
 }
 .typing-text span::before {
-    content: Software Developer;
+    content: 'Software Developer';
     color: var(--main-color);
     animation: words 20s infinite;
 }
@@ -278,8 +278,8 @@ button:active {
     width: calc(100% + 8px);
     height: 100%;
     border-left: 3px solid var(--bg-color);
-    right: 8px;
-    animation: cursor 0.6 infinite, tying 0s steps(14) infinite;
+    right: -8px;
+    animation: cursor 0.2 infinite, typing 10s steps(20) infinite;
 }
 
 @keyframes cursor {
@@ -292,16 +292,32 @@ button:active {
     0%, 20% {
         content: 'Software Developer';
     }
-    0%, 20% {
+    21%, 40% {
         content: 'Mobile App Developer';
     }
-    0%, 20% {
+    41%, 60% {
         content: 'DevOps';
     }
-    0%, 20% {
+    61%, 80% {
         content: 'Project Manager';
     }
-    0%, 20% {
+    81%, 100% {
         content: 'IT Consultant';
+    }
+}
+
+@keyframes typing {
+    10%, 15%,
+    30%, 35%,
+    50%, 55%,
+    70%, 75%,
+    90%, 95% {
+        width: 0;
+    }
+    5%, 20%,
+    25%, 40%,
+    45%, 60%,
+    65%, 80%, 85% {
+        width: calc(100% + 8px);
     }
 }

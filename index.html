@@ -36,7 +36,7 @@
             <p>A strong and committed worker with a deep understanding of IT procedures. I bring a combination of
                 technical skills and diligence to every project, ensuring high-quality results.</p>
             <div class="social-icon">
-                <a href="https://www.linkedin.com/public-profile/settings?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_self_edit_contact-info%3BpQ%2FpcaBZSS65C5Tm2LYoZw%3D%3D" target="_blank" rel="noopener"
+                <a href="https://www.linkedin.com/in/mbavhalelo-ramadi/" target="_blank" rel="noopener"
                     aria-label="LinkedIn Profile"><i class="fa-brands fa-linkedin-in"></i></a>
                 <a href="https://github.com/MbavhaleloRamadi" target="_blank" rel="noopener"
                     aria-label="GitHub Profile"><i class="fa-brands fa-github"></i></a>
@@ -44,28 +44,31 @@
             <a href="#contact" class="button">Hire Me</a>
         </div>
         <div class="home-img">
-            <!-- IMPORTANT: Replace with your actual image path -->
-            <img src="assets/pic1.JPG"
-                alt="A picture of Mbavhalelo Innocent Ramadi">
+            <img src="assets/pic1.JPG" alt="A picture of Mbavhalelo Innocent Ramadi">
         </div>
     </section>
 
     <!-- Contact Section (Included in Home Page) -->
     <section class="contact" id="contact">
         <h2 class="heading">Contact <span>Me</span></h2>
-        <form action="#">
+        <!-- Updated form with ID -->
+        <form id="contactForm">
             <div class="input-box">
                 <input type="text" placeholder="Full Name" required>
                 <input type="email" placeholder="Email Address" required>
             </div>
             <div class="input-box">
                 <input type="tel" placeholder="Mobile Number">
-                <input type="text" placeholder="Email Subject">
+                <!-- Added ID to subject input -->
+                <input id="emailSubject" type="text" placeholder="Email Subject">
             </div>
-            <textarea name="message" id="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
+            <!-- Added ID to message textarea -->
+            <textarea name="message" id="emailMessage" cols="30" rows="10" placeholder="Your Message"
+                required></textarea>
             <input type="submit" value="Send Message" class="button">
         </form>
     </section>
+
 
     <footer class="footer">
         <div class="footer-text">
@@ -76,10 +79,22 @@
         </div>
     </footer>
 
-    <!-- ScrollReveal library for scroll animations -->
-    <script src="https://unpkg.com/scrollreveal"></script>
+    <!-- Contact Options Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>How would you like to send this?</h2>
+            <div class="modal-options">
+                <button id="sendEmail" class="modal-button email"><i class="fas fa-envelope"></i> Send via
+                    Email</button>
+                <button id="sendWhatsApp" class="modal-button whatsapp"><i class="fab fa-whatsapp"></i> Send via
+                    WhatsApp</button>
+                <button id="makeCall" class="modal-button call"><i class="fas fa-phone"></i> Call Directly</button>
+            </div>
+        </div>
+    </div>
 
-    <!-- Custom JavaScript file -->
+    <script src="https://unpkg.com/scrollreveal"></script>
     <script src="script.js"></script>
 </body>
 

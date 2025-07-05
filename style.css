@@ -397,6 +397,7 @@ section {
     flex-wrap: wrap;
     padding: 2rem 9%;
     background: var(--main-color);
+<<<<<<< HEAD:Style.css
     color: var(--second-bg-color);
 }
 
@@ -501,4 +502,6 @@ section {
         gap: 2rem;
         text-align: center;
     }
+=======
+>>>>>>> 74f45ea6478fce697a85b410f1078898f13f00d5:style.css
 }

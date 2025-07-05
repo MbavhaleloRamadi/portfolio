@@ -197,6 +197,7 @@ span {
     cursor: pointer;
     overflow: hidden;
     transition: border 300ms, color 300ms;
+    -webkit-user-select: none;
     user-select: none;
 }
 
@@ -673,4 +674,103 @@ button:active {
         left: 0;
         text-align: left;
     }
+}
+
+/*=============== CONTACT ===============*/
+.contact {
+    background: var(--bg-color);
+}
+
+.contact .heading {
+    color: var(--main-color);
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.contact-info h3 {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.contact-info p {
+    font-size: 1.6rem;
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.contact-details {
+    margin-bottom: 2rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.contact-item i {
+    font-size: 2rem;
+    color: var(--main-color);
+    margin-right: 1rem;
+}
+
+.contact-item a {
+    font-size: 1.6rem;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: var(--main-color);
+}
+
+.contact-form h3 {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.input-box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.input-box input,
+.contact-form textarea {
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    background: #f7f7f7;
+    border-radius: .8rem;
+    margin-bottom: 2rem;
+    border: 1px solid #ddd;
+}
+
+.input-box input {
+    width: 49%;
+}
+
+.contact-form textarea {
+    resize: none;
+}
+
+.contact-form .button {
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+.social-icon a:hover {
+    color: black;
+    transform: scale(1.3)translateY(-5px);
+    box-shadow: 0 0 25px var(--main-color);
+    background: var(--main-color);
 }

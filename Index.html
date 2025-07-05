@@ -1,7 +1,7 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
@@ -9,267 +9,78 @@
     <meta name="keywords"
         content="Mbavhalelo Innocent Ramadi, Junior Developer, Frontend Developer, Mobile Developer, React, Flutter, Portfolio">
     <title>Mbavhalelo Innocent Ramadi | Portfolio</title>
-
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        xintegrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+</head>
 
 <body>
     <header class="header">
-        <a href="https://github.com/MbavhaleloRamadi" class="logo">Mbavhalelo Innocent Ramadi</a>
-
+        <a href="index.html" class="logo">Mbavhalelo R.</a>
         <i class="fa-solid fa-bars" id="menu-icon"></i>
-
         <nav class="navbar">
-            <a href="index.html">Home</a>
-            <a href="services.html">Service</a>
-            <a href="skills.html">skills</a>
-            <a href="education.html">education</a>
+            <a href="index.html" class="active">Home</a>
+            <a href="services.html">Services</a>
+            <a href="skills.html">Skills</a>
+            <a href="education.html">Education</a>
             <a href="index.html#contact">Contact</a>
         </nav>
     </header>
 
+    <!-- Home Section -->
     <section class="home" id="home">
-        <div class="home-img">
-            <img src="assets/pic1.JPG" alt="">
-        </div>
-
         <div class="home-content">
-            <h1>Hi It's <span>Innocent</span></h1>
-            <h3 class="typing-text">I'm a <span></span></h3>
-            <p>I come to you with a reputation as a strong and committed worker, who has a very good understanding of IT
-                procedures. I exhibit a combination of skills and extensive diligence while discharging my duties. </p>
-
+            <h1>Hi, It's <span>Innocent</span></h1>
+            <h3 class="typing-text">I'm a <span>Software Developer</span></h3>
+            <p>A strong and committed worker with a deep understanding of IT procedures. I bring a combination of
+                technical skills and diligence to every project, ensuring high-quality results.</p>
             <div class="social-icon">
-                <a href="https://github.com/MbavhaleloRamadi"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/mbavhalelo-ramadi/" target="_blank" rel="noopener"
+                    aria-label="LinkedIn Profile"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://github.com/MbavhaleloRamadi" target="_blank" rel="noopener"
+                    aria-label="GitHub Profile"><i class="fa-brands fa-github"></i></a>
             </div>
+            <a href="#contact" class="button">Hire Me</a>
+        </div>
+        <div class="home-img">
+            <!-- IMPORTANT: Replace with your actual image path -->
+            <img src="assets/pic1.JPG"
+                alt="A picture of Mbavhalelo Innocent Ramadi">
         </div>
     </section>
 
-    <section class="services" id="services">
-        <h2 class="heading">services</h2>
-
-        <div class="service-container">
-            <div class="single-service">
-                <div class="content">
-                    <span class="icon">
-                        <i class="fab fa-battle-net"></i>
-                    </span>
-                    <h3 class="title">Custom Software Development</h3>
-                    <p class="description">Building tailored software solutions for businesses and individuals.</p>
-                </div>
-                <span class="circle-before"></span>
-            </div>
-        </div>
-
-        <div class="service-container">
-            <div class="single-service">
-                <div class="content">
-                    <span class="icon">
-                        <i class="fab fa-artstation"></i>
-                    </span>
-                    <h3 class="title">iOS & Android App Development</h3>
-                    <p class="description">Creating apps for smartphones and tablets.</p>
-                </div>
-                <span class="circle-before"></span>
-            </div>
-        </div>
-
-        <div class="service-container">
-            <div class="single-service">
-                <div class="content">
-                    <span class="icon">
-                        <i class="fab fa-asymmetrik"></i>
-                    </span>
-                    <h3 class="title">Cloud Security & Compliance</h3>
-                    <p class="description">Ensuring secure cloud deployments and meeting regulatory standards.</p>
-                </div>
-                <span class="circle-before"></span>
-            </div>
-        </div>
-
-        <div class="service-container">
-            <div class="single-service">
-                <div class="content">
-                    <span class="icon">
-                        <i class="fab fa-500px"></i>
-                    </span>
-                    <h3 class="title">Risk Management & Problem Solving</h3>
-                    <p class="description">Identifying risks and ensuring smooth project execution</p>
-                </div>
-                <span class="circle-before"></span>
-            </div>
-        </div>
-
-        <div class="service-container">
-            <div class="single-service">
-                <div class="content">
-                    <span class="icon">
-                        <i class="fab fa-500px"></i>
-                    </span>
-                    <h3 class="title">Cybersecurity Consulting</h3>
-                    <p class="description">Assessing and improving IT security measures.</p>
-                </div>
-                <span class="circle-before"></span>
-            </div>
-        </div>
-
-        <div class="service-container">
-            <div class="single-service">
-                <div class="content">
-                    <span class="icon">
-                        <i class="fab fa-500px"></i>
-                    </span>
-                    <h3 class="title">Cross-Platform Development</h3>
-                    <p class="description">Building apps that work on multiple platforms(Flutter)</p>
-                </div>
-                <span class="circle-before"></span>
-            </div>
-        </div>
-    </section>
-
-    <section class="skills" id="skills">
-        <h2 class="heading">skills</h2>
-        <div class="container">
-            <div class="row" id="skillsContainer">
-
-                <div class="bar" data-aos="flip">
-                    <div class="info">
-                        <img src="assets/figma-1-logo-svg-vector.svg" alt="">
-                        <span>Figma</span>
-                    </div>
-                </div>
-
-                <div class="bar" data-aos="flip-left">
-                    <div class="info">
-                        <img src="assets/flutter-logo.svg" alt="">
-                        <span>Flutter</span>
-                    </div>
-                </div>
-
-                <div class="bar" data-aos="flip-left">
-                    <div class="info">
-                        <img src="assets/java-14-logo-svg-vector.svg" alt="">
-                        <span>Java</span>
-                    </div>
-                </div>
-
-                <div class="bar" data-aos="flip-left">
-                    <div class="info">
-                        <img src="assets/javascript-logo-svg-vector.svg" alt="">
-                        <span>JavaScript</span>
-                    </div>
-                </div>
-
-                <div class="bar" data-aos="flip-left">
-                    <div class="info">
-                        <img src="assets/c-seeklogo.svg" alt="">
-                        <span>C#</span>
-                    </div>
-                </div>
-
-                <div class="bar" data-aos="flip-left">
-                    <div class="info">
-                        <img src="assets/azure-devops.svg" alt="">
-                        <span>Azure DevOps</span>
-                    </div>
-                </div>
-
-                <div class="bar" data-aos="flip-left">
-                    <div class="info">
-                        <img src="assets/Security-Icon-2.png" alt="">
-                        <span>Info Security</span>
-                    </div>
-                </div>
-
-                <div class="bar" data-aos="flip-left">
-                    <div class="info">
-                        <img src="assets/jotform-seeklogo.svg" alt="">
-                        <span>JotForm</span>
-                    </div>
-                </div>
-
-                <div class="bar" data-aos="flip-left">
-                    <div class="info">
-                        <img src="assets/monday-seeklogo.svg" alt="">
-                        <span>monday.com</span>
-                    </div>
-                </div>
-
-                <div class="bar" data-aos="flip-left">
-                    <div class="info">
-                        <img src="assets/n8n-seeklogo.svg" alt="">
-                        <span>n8n</span>
-                    </div>
-                </div>
-
-                <div class="bar" data-aos="flip-left">
-                    <div class="info">
-                        <img src="assets/python-seeklogo.svg" alt="">
-                        <span>Python</span>
-                    </div>
-                </div>
-
-                <div class="bar" data-aos="flip-left">
-                    <div class="info">
-                        <img src="assets/zapier-seeklogo.png" alt="">
-                        <span>Zapier</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    <!-- Contact Section (Included in Home Page) -->
     <section class="contact" id="contact">
-        <h2 class="heading">Contact Me</h2>
-
-        <div class="contact-container">
-            <div class="contact-info">
-                <h3>Get in Touch</h3>
-                <p>I'd love to hear from you. Whether you have a question or just want to say hi, feel free to reach
-                    out.</p>
-                <div class="contact-details">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <a href="mailto:mbavharamadi@gmail.com">mbavharamadi@gmail.com</a>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <a href="tel:0824035469">082 403 5469</a>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <a href="tel:0662143149">066 214 3149</a>
-                    </div>
-                </div>
-                <div class="social-icon">
-                    <a href="https://github.com/MbavhaleloRamadi" target="_blank" rel="noopener"
-                        title="GitHub Profile"><i class="fa-brands fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/mbavhalelo-ramadi/" target="_blank" rel="noopener"
-                        title="LinkedIn Profile"><i class="fa-brands fa-linkedin-in"></i></a>
-                </div>
+        <h2 class="heading">Contact <span>Me</span></h2>
+        <form action="#">
+            <div class="input-box">
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email Address" required>
             </div>
-
-            <div class="contact-form">
-                <h3>Send me a Message</h3>
-                <form action="#">
-                    <div class="input-box">
-                        <input type="text" placeholder="Full Name">
-                        <input type="email" placeholder="Email">
-                    </div>
-                    <div class="input-box">
-                        <input type="number" placeholder="Mobile Number">
-                        <input type="text" placeholder="Subject">
-                    </div>
-                    <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
-                    <input type="submit" value="Send Message" class="button">
-                </form>
+            <div class="input-box">
+                <input type="tel" placeholder="Mobile Number">
+                <input type="text" placeholder="Email Subject">
             </div>
-        </div>
+            <textarea name="message" id="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
+            <input type="submit" value="Send Message" class="button">
+        </form>
     </section>
 
+    <footer class="footer">
+        <div class="footer-text">
+            <p>&copy; 2025 Mbavhalelo Innocent Ramadi | All Rights Reserved.</p>
+        </div>
+        <div class="footer-icon-top">
+            <a href="#home"><i class="fa-solid fa-arrow-up"></i></a>
+        </div>
+    </footer>
+
+    <!-- ScrollReveal library for scroll animations -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- Custom JavaScript file -->
+    <script src="script.js"></script>
 </body>
 
 </html>

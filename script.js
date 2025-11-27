@@ -2,124 +2,186 @@
  * Custom JavaScript for Interactive Multi-Page Portfolio
  */
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
+  // --- 1. Mobile Navigation Toggle ---
+  const menuIcon = document.querySelector("#menu-icon");
+  const navbar = document.querySelector(".navbar");
 
-    // --- 1. Mobile Navigation Toggle ---
-    const menuIcon = document.querySelector('#menu-icon');
-    const navbar = document.querySelector('.navbar');
+  if (menuIcon && navbar) {
+    menuIcon.onclick = () => {
+      menuIcon.classList.toggle("fa-xmark");
+      navbar.classList.toggle("active");
+    };
+  }
 
-    if (menuIcon && navbar) {
-        menuIcon.onclick = () => {
-            menuIcon.classList.toggle('fa-xmark');
-            navbar.classList.toggle('active');
-        };
+  // --- 2. Close Mobile Menu when a link is clicked ---
+  const navLinks = document.querySelectorAll(".navbar a");
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      if (navbar.classList.contains("active")) {
+        menuIcon.classList.remove("fa-xmark");
+        navbar.classList.remove("active");
+      }
+    });
+  });
+
+  // --- 3. Scroll Reveal Animations ---
+  if (typeof ScrollReveal !== "undefined") {
+    ScrollReveal({
+      distance: "80px",
+      duration: 2000,
+      delay: 200,
+    });
+    ScrollReveal().reveal(".heading", { origin: "top" });
+    ScrollReveal().reveal(".footer", { origin: "bottom" });
+    if (document.querySelector(".home")) {
+      ScrollReveal().reveal(".home-content", { origin: "left" });
+      ScrollReveal().reveal(".home-img", { origin: "right" });
     }
+    if (document.querySelector(".services-container")) {
+      ScrollReveal().reveal(".service-box", {
+        origin: "bottom",
+        interval: 200,
+      });
+    }
+    if (document.querySelector(".skills-container")) {
+      ScrollReveal().reveal(".skill-box", { origin: "bottom", interval: 200 });
+    }
+    if (document.querySelector(".timeline-container")) {
+      ScrollReveal().reveal(".timeline-item", {
+        origin: "bottom",
+        interval: 200,
+      });
+    }
+    if (document.querySelector(".contact form")) {
+      ScrollReveal().reveal(".contact form", { origin: "bottom" });
+    }
+  } else {
+    console.log("ScrollReveal library not found.");
+  }
 
-    // --- 2. Close Mobile Menu when a link is clicked ---
-    const navLinks = document.querySelectorAll('.navbar a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            if (navbar.classList.contains('active')) {
-                menuIcon.classList.remove('fa-xmark');
-                navbar.classList.remove('active');
-            }
-        });
+  // --- 4. Contact Form Modal Logic ---
+  const contactForm = document.querySelector("#contactForm");
+  const modal = document.getElementById("contactModal");
+  const closeButton = document.querySelector(".close-button");
+
+  // Only run this logic if the contact form and modal exist on the page (i.e., on index.html)
+  if (contactForm && modal) {
+    contactForm.addEventListener("submit", function (event) {
+      event.preventDefault(); // Stop the form from submitting the traditional way
+      modal.style.display = "block"; // Show the modal
     });
 
-    // --- 3. Scroll Reveal Animations ---
-    if (typeof ScrollReveal !== 'undefined') {
-        ScrollReveal({
-            distance: '80px',
-            duration: 2000,
-            delay: 200,
-        });
-        ScrollReveal().reveal('.heading', { origin: 'top' });
-        ScrollReveal().reveal('.footer', { origin: 'bottom' });
-        if (document.querySelector('.home')) {
-            ScrollReveal().reveal('.home-content', { origin: 'left' });
-            ScrollReveal().reveal('.home-img', { origin: 'right' });
-        }
-        if (document.querySelector('.services-container')) {
-            ScrollReveal().reveal('.service-box', { origin: 'bottom', interval: 200 });
-        }
-        if (document.querySelector('.skills-container')) {
-            ScrollReveal().reveal('.skill-box', { origin: 'bottom', interval: 200 });
-        }
-        if (document.querySelector('.timeline-container')) {
-            ScrollReveal().reveal('.timeline-item', { origin: 'bottom', interval: 200 });
-        }
-        if (document.querySelector('.contact form')) {
-            ScrollReveal().reveal('.contact form', { origin: 'bottom' });
-        }
-    } else {
-        console.log("ScrollReveal library not found.");
+    // Close modal when 'x' is clicked
+    if (closeButton) {
+      closeButton.onclick = function () {
+        modal.style.display = "none";
+      };
     }
 
-    // --- 4. Contact Form Modal Logic ---
-    const contactForm = document.querySelector('#contactForm');
-    const modal = document.getElementById('contactModal');
-    const closeButton = document.querySelector('.close-button');
+    // Close modal when clicking outside of it
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    };
 
-    // Only run this logic if the contact form and modal exist on the page (i.e., on index.html)
-    if (contactForm && modal) {
-        contactForm.addEventListener('submit', function(event) {
-            event.preventDefault(); // Stop the form from submitting the traditional way
-            modal.style.display = 'block'; // Show the modal
-        });
+    // --- Contact option button handlers ---
+    const sendEmailBtn = document.getElementById("sendEmail");
+    const sendWhatsAppBtn = document.getElementById("sendWhatsApp");
+    const makeCallBtn = document.getElementById("makeCall");
 
-        // Close modal when 'x' is clicked
-        if (closeButton) {
-            closeButton.onclick = function() {
-                modal.style.display = 'none';
-            }
-        }
+    const myEmail = "mbavharamadi@gmail.com";
+    const myPhoneNumber = "27824035469"; // International format for WhatsApp/Tel
 
-        // Close modal when clicking outside of it
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = 'none';
-            }
-        }
-
-        // --- Contact option button handlers ---
-        const sendEmailBtn = document.getElementById('sendEmail');
-        const sendWhatsAppBtn = document.getElementById('sendWhatsApp');
-        const makeCallBtn = document.getElementById('makeCall');
-
-        const myEmail = 'mbavharamadi@gmail.com';
-        const myPhoneNumber = '27824035469'; // International format for WhatsApp/Tel
-
-        // Email button
-        if (sendEmailBtn) {
-            sendEmailBtn.onclick = function() {
-                const subject = document.getElementById('emailSubject').value || 'Portfolio Inquiry';
-                const message = document.getElementById('emailMessage').value;
-                // Construct the mailto link and open the user's default email client
-                window.location.href = `mailto:${myEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
-                modal.style.display = 'none';
-            }
-        }
-
-        // WhatsApp button
-        if (sendWhatsAppBtn) {
-            sendWhatsAppBtn.onclick = function() {
-                const message = document.getElementById('emailMessage').value;
-                const whatsappUrl = `https://wa.me/${myPhoneNumber}?text=${encodeURIComponent(message)}`;
-                // Open WhatsApp in a new tab
-                window.open(whatsappUrl, '_blank');
-                modal.style.display = 'none';
-            }
-        }
-
-        // Call button
-        if (makeCallBtn) {
-            makeCallBtn.onclick = function() {
-                // Initiate a phone call
-                window.location.href = `tel:+${myPhoneNumber}`;
-                modal.style.display = 'none';
-            }
-        }
+    // Email button
+    if (sendEmailBtn) {
+      sendEmailBtn.onclick = function () {
+        const subject =
+          document.getElementById("emailSubject").value || "Portfolio Inquiry";
+        const message = document.getElementById("emailMessage").value;
+        // Construct the mailto link and open the user's default email client
+        window.location.href = `mailto:${myEmail}?subject=${encodeURIComponent(
+          subject
+        )}&body=${encodeURIComponent(message)}`;
+        modal.style.display = "none";
+      };
     }
 
-    console.log("Portfolio script loaded successfully!");
+    // WhatsApp button
+    if (sendWhatsAppBtn) {
+      sendWhatsAppBtn.onclick = function () {
+        const message = document.getElementById("emailMessage").value;
+        const whatsappUrl = `https://wa.me/${myPhoneNumber}?text=${encodeURIComponent(
+          message
+        )}`;
+        // Open WhatsApp in a new tab
+        window.open(whatsappUrl, "_blank");
+        modal.style.display = "none";
+      };
+    }
+
+    // Call button
+    if (makeCallBtn) {
+      makeCallBtn.onclick = function () {
+        // Initiate a phone call
+        window.location.href = `tel:+${myPhoneNumber}`;
+        modal.style.display = "none";
+      };
+    }
+  }
+
+  // --- 5. Certificate Viewer Logic ---
+  const certLinks = document.querySelectorAll(".cert-link");
+
+  if (certLinks.length > 0) {
+    certLinks.forEach((link) => {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        const certUrl = this.getAttribute("href");
+
+        // Check if it's a PDF or image
+        if (certUrl.endsWith(".pdf")) {
+          // Open PDF in new tab
+          window.open(certUrl, "_blank");
+        } else {
+          // For images (jpg, png, etc.), create a modal to display full image
+          showCertificateModal(certUrl);
+        }
+      });
+    });
+  }
+
+  // Function to create and show certificate modal
+  function showCertificateModal(imageUrl) {
+    // Create modal elements
+    const certModal = document.createElement("div");
+    certModal.className = "cert-modal";
+    certModal.innerHTML = `
+        <div class="cert-modal-content">
+            <span class="cert-close">&times;</span>
+            <img src="${imageUrl}" alt="Certificate">
+        </div>
+    `;
+
+    document.body.appendChild(certModal);
+    certModal.style.display = "block";
+
+    // Close modal when X is clicked
+    const closeBtn = certModal.querySelector(".cert-close");
+    closeBtn.onclick = function () {
+      certModal.style.display = "none";
+      document.body.removeChild(certModal);
+    };
+
+    // Close modal when clicking outside the image
+    certModal.onclick = function (e) {
+      if (e.target === certModal) {
+        certModal.style.display = "none";
+        document.body.removeChild(certModal);
+      }
+    };
+  }
+
+  console.log("Portfolio script loaded successfully!");
 });
